@@ -18,7 +18,7 @@ The format must be a format supported by `Moment.js`.
 
 ```php 
 <?php 
-use Michielfb\Time;
+use Michielfb\Time\Time;
 
 
 Time::make('Time')->format('HH:mm');
