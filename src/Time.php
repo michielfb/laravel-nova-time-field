@@ -24,4 +24,30 @@ class Time extends Field
             'format' => $format,
         ]);
     }
+
+    /**
+     * Set step attribute on time field.
+     *
+     * @param int $step
+     *
+     * @return $this
+     */
+    public function withSteps(int $step)
+    {
+        return $this->withMeta([
+            'step' => $step
+        ]);
+    }
+
+    /**
+     * Allow users to enter seconds.
+     *
+     * @return $this
+     */
+    public function withSeconds()
+    {
+        return $this->withMeta([
+            'step' => 1,
+        ]);
+    }
 }
