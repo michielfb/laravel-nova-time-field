@@ -1,12 +1,14 @@
 <template>
     <default-field :field="field">
         <template slot="field">
-            <input :id="field.name" type="time"
-                class="w-full form-control form-input form-input-bordered"
-                :class="errorClasses"
-                :placeholder="field.name"
-                :disabled="isReadonly"
-                v-model="value"
+            <input :id="field.name"
+                   type="time"
+                   class="w-full form-control form-input form-input-bordered"
+                   :class="errorClasses"
+                   :placeholder="field.name"
+                   :disabled="isReadonly"
+                   :step="field.step !== undefined ? field.step : false"
+                   v-model="value"
             />
 
             <p v-if="hasError" class="my-2 text-danger">
