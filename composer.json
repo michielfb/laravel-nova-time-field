@@ -1,6 +1,6 @@
 {
     "name": "michielfb/laravel-nova-time-field",
-    "description": "A Laravel Nova field.",
+    "description": "A HTML5 time field for Laravel Nova.",
     "keywords": [
         "laravel",
         "nova"
