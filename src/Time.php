@@ -28,11 +28,16 @@ class Time extends Field
     /**
      * Set step attribute on time field.
      *
-     * @param int $step
+     * For seconds:
+     *  - use integers that will eventually reach 60 - e.g.: 1, 2, 10, 30
+     * For milliseconds:
+     *  - use floats that eventually will reach 1 - e.g.: 0.001, 0.050, 0.200, etc.
+     *
+     * @param int|float $step
      *
      * @return $this
      */
-    public function withSteps(int $step)
+    public function withSteps($step)
     {
         return $this->withMeta([
             'step' => $step

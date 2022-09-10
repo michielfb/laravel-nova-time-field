@@ -9,7 +9,7 @@ export default {
     computed: {
         formattedDate() {
             return this.field.value
-                ? moment(this.field.value, 'HH:mm:ss').format(this.field.format)
+                ? moment(this.field.value, this.field.format).format(this.field.format)
                 : '-';
         }
     }
