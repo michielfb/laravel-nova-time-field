@@ -1,5 +1,9 @@
-Nova.booting((Vue, router) => {
-    Vue.component('index-time', require('./components/IndexField'));
-    Vue.component('detail-time', require('./components/DetailField'));
-    Vue.component('form-time', require('./components/FormField'));
+import IndexField from './components/IndexField'
+import DetailField from './components/DetailField'
+import FormField from './components/FormField'
+
+Nova.booting((app, store) => {
+  app.component('index-time', IndexField)
+  app.component('detail-time', DetailField)
+  app.component('form-time', FormField)
 })

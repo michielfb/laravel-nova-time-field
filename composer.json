@@ -1,17 +1,25 @@
 {
-    "name": "michielfb/laravel-nova-time-field",
-    "description": "A HTML5 time field for Laravel Nova.",
+    "name": "michielfb/time",
+    "description": "A Laravel Nova field.",
     "keywords": [
         "laravel",
         "nova"
     ],
     "license": "MIT",
     "require": {
-        "php": ">=7.1.0"
+        "php": "^7.3|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {
             "Michielfb\\Time\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Michielfb\\Time\\Tests\\": "tests/"
         }
     },
     "extra": {
