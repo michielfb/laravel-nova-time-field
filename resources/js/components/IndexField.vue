@@ -1,17 +1,15 @@
 <template>
-    <span class="whitespace-no-wrap">{{ formattedDate }}</span>
+  <span>{{ fieldValue }}</span>
 </template>
 
 <script>
 export default {
-    props: ['field'],
+  props: ['resourceName', 'field'],
 
-    computed: {
-        formattedDate() {
-            return this.field.value
-                ? moment(this.field.value, this.field.format).format(this.field.format)
-                : '-';
-        }
-    }
+  computed: {
+    fieldValue() {
+      return this.field.displayedAs || this.field.value
+    },
+  }
 }
 </script>

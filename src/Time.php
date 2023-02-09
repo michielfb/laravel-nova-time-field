@@ -2,6 +2,7 @@
 
 namespace Michielfb\Time;
 
+use DateTimeImmutable;
 use Laravel\Nova\Fields\Field;
 
 class Time extends Field
@@ -14,15 +15,22 @@ class Time extends Field
     public $component = 'time';
 
     /**
+     * Format the value using PHP date format.
+     *
      * @param string $format
+     * @param string $default
      *
      * @return $this
      */
-    public function format(string $format = 'hh:mm A')
+    public function format(string $format = 'H:i', string $default = '-')
     {
-        return $this->withMeta([
-            'format' => $format,
-        ]);
+        $this->displayCallback = function ($value) use ($format, $default) {
+            return $value
+                ? (new DateTimeImmutable($value))->format($format)
+                : $default;
+        };
+
+        return $this;
     }
 
     /**
@@ -53,6 +61,18 @@ class Time extends Field
     {
         return $this->withMeta([
             'step' => 1,
+        ]);
+    }
+
+    /**
+     * Allow users to enter milliseconds.
+     *
+     * @return $this
+     */
+    public function withMilliseconds()
+    {
+        return $this->withMeta([
+            'step' => 0.001,
         ]);
     }
 }
