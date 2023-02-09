@@ -1,13 +1,14 @@
 {
-    "name": "michielfb/time",
-    "description": "A Laravel Nova field.",
+    "name": "michielfb/laravel-nova-time-field",
+    "description": "A HTML5 time field for Laravel Nova.",
     "keywords": [
         "laravel",
         "nova"
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "laravel/nova": "^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.10"
